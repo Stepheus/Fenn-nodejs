@@ -1,7 +1,7 @@
 services:
   node-app:
     build:
-      context: .
+      context: ./app
       args:
         - NODE_ENV: production
   environment:
