@@ -1,11 +1,10 @@
+//dependencies
 const express = require("express");
 const app = express();
 const nodemailer = require("nodemailer");
 
-
-app.listen(3000, ()=>{
-    console.log("Server listening on port 3000")
-});
+//Environment variables
+const {PORT} = require("./config/config.js");
 
 
 app.set("view engine", "ejs");
@@ -16,6 +15,9 @@ app.use(express.static("public"));
 //convert forms submissions into database blog
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
+
+//Proxy for nginx
+app.enable("trust proxy");
 
 
 app.get("/", (req, res)=>{
@@ -81,4 +83,9 @@ app.use((req, res)=>{
     const page ="404-page";
     res.status(404).render("404.ejs"), {page};
 })
+
+app.listen(PORT, ()=>{
+    console.log(`Server listening on port ${PORT}`)
+});
+
 

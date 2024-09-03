@@ -4,7 +4,10 @@
   "description": "Checking for change two  after change on",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "preinstall": "npm i nodemon -g",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "author": "",
   "license": "ISC",
@@ -14,5 +17,7 @@
     "lodash": "^4.17.21",
     "mongoose": "^8.3.4",
     "nodemailer": "^6.9.13"
+  },
+  "devDependencies": {
   }
 }
