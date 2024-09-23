@@ -6,11 +6,12 @@ services:
     #   - "3000:4000"
     environment:
       - PORT=4000
+    # restart: always
     depends_on:
       - nginx
   nginx:
     container_name: nginx
-    # restart: always
+    restart: always
     build: 
       context: ./nginx
     ports:

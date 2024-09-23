@@ -1,10 +1,9 @@
 services:
   node-app:
     build:
-      context: ./app
       args:
-        - NODE_ENV: production
-  environment:
-    - NODE_ENV=production
+        - NODE_ENV=production
+    environment:
+      - NODE_ENV=production
   
-  command: node app.js
+    command: node app.js
